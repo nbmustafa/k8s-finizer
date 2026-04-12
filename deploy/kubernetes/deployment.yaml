@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-cost-optimizer
+  namespace: finops
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: k8s-cost-optimizer
+  template:
+    metadata:
+      labels:
+        app: k8s-cost-optimizer
+    spec:
+      serviceAccountName: k8s-cost-optimizer
+      containers:
+        - name: app
+          image: ghcr.io/your-org/k8s-cost-optimizer:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+              name: http
+          envFrom:
+            - configMapRef:
+                name: k8s-cost-optimizer-config
+            - secretRef:
+                name: k8s-cost-optimizer-secrets
+          resources:
+            requests:
+              cpu: 250m
+              memory: 256Mi
+            limits:
+              cpu: 1000m
+              memory: 1Gi
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20

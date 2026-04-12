@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k8s-cost-optimizer-config
+  namespace: finops
+data:
+  PORT: "8080"
+  NODE_ENV: "production"
+  ANTHROPIC_MODEL: "claude-sonnet-4-20250514"
+  ANTHROPIC_MAX_TOKENS: "1600"
+  DEFAULT_REGION: "us-east-1"
+  DEFAULT_REPORT_CURRENCY: "USD"
