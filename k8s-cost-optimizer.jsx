@@ -63,7 +63,7 @@ export default function K8sCostOptimizer() {
       clusterData.clusterName = clusterInput.trim();
     }
 
-    addLog("🤖 Agentic AI initialized — Kubernetes Cost Intelligence Engine v2.4", "system");
+    addLog("🤖 k8s-finizer initialized — Kubernetes Cost Intelligence Engine v2.4", "system");
     addLog(`📡 Connecting to cluster: ${clusterData.clusterName}`, "system");
     await sleep(800);
     addLog("✓ Cluster API authenticated. Fetching resource graph...", "success");
@@ -329,8 +329,8 @@ Make it realistic with 5-6 top_findings, actual dollar amounts based on the data
           <div className="logo">
             <div className="logo-hex">⬡</div>
             <div>
-              <div className="logo-text">K8s FinOps Agent</div>
-              <div className="logo-sub">Cost Intelligence Engine</div>
+              <div className="logo-text">k8s-finizer</div>
+              <div className="logo-sub">Kubernetes Cost Intelligence</div>
             </div>
           </div>
           <div className="badge">Powered by Claude AI</div>
@@ -444,7 +444,7 @@ Make it realistic with 5-6 top_findings, actual dollar amounts based on the data
               <div className="idle-state">
                 <div className="idle-inner">
                   <div className="idle-hex">⬡</div>
-                  <div className="idle-title">Kubernetes Cost Intelligence</div>
+                  <div className="idle-title">k8s-finizer</div>
                   <div className="idle-desc">
                     Configure your cluster target and launch the AI agent. It will autonomously analyze node utilization, detect idle resources, compute rightsizing opportunities, and generate an actionable FinOps report.
                   </div>
@@ -472,7 +472,7 @@ Make it realistic with 5-6 top_findings, actual dollar amounts based on the data
                 {/* HEADER */}
                 <div className="report-header">
                   <div>
-                    <div className="report-title">Cost Optimization Report</div>
+                    <div className="report-title">k8s-finizer Report</div>
                     <div className="report-sub">{clusterInput || "prod-eks-us-east-1"} · Generated {new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</div>
                   </div>
                   <div className="savings-big">

@@ -1,21 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: k8s-cost-optimizer
-  namespace: finops
+  name: k8s-finizer
+  namespace: k8s-finizer
   annotations:
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
 spec:
   ingressClassName: nginx
   rules:
-    - host: k8s-finops.example.com
+    - host: k8s-finizer.example.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: k8s-cost-optimizer
+                name: k8s-finizer
                 port:
                   name: http

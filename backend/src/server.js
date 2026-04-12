@@ -106,7 +106,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.listen(config.port, () => {
-  console.log(`K8s cost optimizer listening on port ${config.port}`);
+  console.log(`k8s-finizer listening on port ${config.port}`);
 });
 
 async function executeRun(run) {
@@ -120,7 +120,7 @@ async function executeRun(run) {
   };
 
   try {
-    publish.log({ type: "system", msg: "🤖 Agentic AI initialized — Kubernetes Cost Intelligence Engine" });
+    publish.log({ type: "system", msg: "🤖 k8s-finizer initialized — Kubernetes Cost Intelligence Engine" });
     publish.log({ type: "system", msg: `📡 Connecting to cluster: ${run.payload.clusterName}` });
     publish.log({ type: "success", msg: "✓ Cluster API authenticated. Building telemetry graph..." });
 

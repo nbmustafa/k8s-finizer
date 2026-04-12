@@ -1,5 +1,5 @@
 {
-  "name": "k8s-cost-optimizer-backend",
+  "name": "k8s-finizer-backend",
   "version": "1.0.0",
   "private": true,
   "type": "module",

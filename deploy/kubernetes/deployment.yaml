@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-cost-optimizer
-  namespace: finops
+  name: k8s-finizer
+  namespace: k8s-finizer
 spec:
   replicas: 2
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: k8s-cost-optimizer
+      app: k8s-finizer
   template:
     metadata:
       labels:
-        app: k8s-cost-optimizer
+        app: k8s-finizer
     spec:
-      serviceAccountName: k8s-cost-optimizer
+      serviceAccountName: k8s-finizer
       containers:
         - name: app
-          image: ghcr.io/your-org/k8s-cost-optimizer:latest
+          image: ghcr.io/your-org/k8s-finizer:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
               name: http
           envFrom:
             - configMapRef:
-                name: k8s-cost-optimizer-config
+                name: k8s-finizer-config
             - secretRef:
-                name: k8s-cost-optimizer-secrets
+                name: k8s-finizer-secrets
           resources:
             requests:
               cpu: 250m

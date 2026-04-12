@@ -272,8 +272,8 @@ export default function App() {
           <div className="logo">
             <div className="logo-hex">⬡</div>
             <div>
-              <div className="logo-text">K8s FinOps Agent</div>
-              <div className="logo-sub">Cost Intelligence Engine</div>
+              <div className="logo-text">k8s-finizer</div>
+              <div className="logo-sub">Kubernetes Cost Intelligence</div>
             </div>
           </div>
           <div className="badge">Powered by Anthropic</div>
@@ -389,7 +389,7 @@ export default function App() {
               <div className="idle-state">
                 <div className="idle-inner">
                   <div className="idle-hex">⬡</div>
-                  <div className="idle-title">Kubernetes Cost Intelligence</div>
+                  <div className="idle-title">k8s-finizer</div>
                   <div className="idle-desc">
                     Enter a cluster name, choose provider and scope, then launch the agent. It will execute seven autonomous tools, stream every step into the terminal, and return a FinOps report with savings, risks, and a delivery roadmap.
                   </div>
@@ -418,7 +418,7 @@ export default function App() {
               <div className="report">
                 <div className="report-header">
                   <div>
-                    <div className="report-title">Cost Optimization Report</div>
+                    <div className="report-title">k8s-finizer Report</div>
                     <div className="report-sub">
                       {snapshot?.clusterName || form.clusterName} · {form.provider.toUpperCase()} · Generated {new Date().toLocaleDateString("en-AU")}
                     </div>

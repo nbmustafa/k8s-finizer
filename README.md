@@ -1,4 +1,4 @@
-# Kubernetes Cost Optimizer
+# k8s-finizer
 
 Agentic AI application that analyzes Kubernetes spend, streams a seven-step autonomous pipeline to the UI, and generates a FinOps report backed by Anthropic with a deterministic offline fallback.
 
@@ -43,8 +43,8 @@ Copy `.env.example` to `backend/.env` or export the variables in your shell.
 ## Container Build
 
 ```bash
-docker build -t k8s-cost-optimizer:latest .
-docker run -p 8080:8080 --env-file backend/.env k8s-cost-optimizer:latest
+docker build -t k8s-finizer:latest .
+docker run -p 8080:8080 --env-file backend/.env k8s-finizer:latest
 ```
 
 ## Kubernetes Deployment
@@ -52,9 +52,9 @@ docker run -p 8080:8080 --env-file backend/.env k8s-cost-optimizer:latest
 Apply the manifests after creating the Anthropic secret:
 
 ```bash
-kubectl create namespace finops
-kubectl create secret generic k8s-cost-optimizer-secrets \
-  --namespace finops \
+kubectl create namespace k8s-finizer
+kubectl create secret generic k8s-finizer-secrets \
+  --namespace k8s-finizer \
   --from-literal=ANTHROPIC_API_KEY="$ANTHROPIC_API_KEY"
 kubectl apply -f deploy/kubernetes/
 ```

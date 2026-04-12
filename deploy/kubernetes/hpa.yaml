@@ -1,13 +1,13 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: k8s-cost-optimizer
-  namespace: finops
+  name: k8s-finizer
+  namespace: k8s-finizer
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: k8s-cost-optimizer
+    name: k8s-finizer
   minReplicas: 2
   maxReplicas: 6
   metrics:

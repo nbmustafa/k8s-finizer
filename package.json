@@ -1,5 +1,5 @@
 {
-  "name": "k8s-cost-optimizer",
+  "name": "k8s-finizer",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
