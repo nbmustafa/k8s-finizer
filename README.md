@@ -2,6 +2,13 @@
 
 Agentic AI application that analyzes Kubernetes spend, streams a seven-step autonomous pipeline to the UI, and generates a FinOps report backed by Anthropic with a deterministic offline fallback.
 
+The operator console provides real-time visibility into the agentic pipeline, displaying live resource metrics and the autonomous decision-making process.
+
+<p align="center">
+  <img src="assets/img/k8s-finizer1.png" width="45%" alt="k8s-finizer Dashboard View" />
+  <img src="assets/img/k8s-finizer2.png" width="45%" alt="k8s-finizer Pipeline View" />
+</p>
+
 ## Architecture
 
 - `frontend/`: React + Vite operator console using live SSE updates.
